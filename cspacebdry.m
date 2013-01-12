@@ -3,13 +3,15 @@ function [cpivot, cbdry] = cspacebdry(objbdry, indx)
 % a given base boundary and a reference index
 %
 % [cpivot, cbdry] = cspaceboundary(objbdry, indx)
-% objbdry : input boundary clouds, column main Nx2
-% indx : the reference index
-% cpivot : output c space boundary reference point
-% cbdry : output boundary clouds
+% INPUTS
+% objbdry : boundary clouds, each row of this matrix is a vertex with [x, y] coordinates
+% indx : the reference index to a pivot vertex
+% OUTPUTS
+% cpivot : [x, y] coordinates of the pivot vertex
+% cbdry : c space boundary of objbdry
 %
 % Author: Weiwei Wan, The University of Tokyo
-% 2011-03-07
+% Data: 03-07-2011
 
   cpivot = objbdry(indx, :);
   [row, col] = size(objbdry);
