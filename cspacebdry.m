@@ -1,4 +1,5 @@
 function [cpivot, cbdry] = cspacebdry(objbdry, indx)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % This function performs C boundary generation according to
 % a given base boundary and a reference index
 %
@@ -12,6 +13,7 @@ function [cpivot, cbdry] = cspacebdry(objbdry, indx)
 %
 % Author: Weiwei Wan, The University of Tokyo
 % Data: 03-07-2011
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
   cpivot = objbdry(indx, :);
   [row, col] = size(objbdry);
