@@ -32,4 +32,3 @@ function pointlist = DDA(x1,y1,x2,y2)
     y=y+dy;
   end
   pointlist = tmppointlist(1:lpointlist, :);
-end
