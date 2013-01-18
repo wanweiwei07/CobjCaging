@@ -1,5 +1,5 @@
 function ccfi = cctranslation(ccpivot, ccboundary, fi)
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % This function translate the template ccboundary with ccpivot to
 % a finger position denoted by fi
 % ccfi is the result of of transformation
@@ -14,7 +14,7 @@ function ccfi = cctranslation(ccpivot, ccboundary, fi)
 %
 % Author: Weiwei Wan, The University of Tokyo
 % Data: 04-06-2011 (last modified)
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
   [row, col] = size(ccboundary);
   diff = fi - ccpivot;
