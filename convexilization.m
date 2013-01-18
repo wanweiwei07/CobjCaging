@@ -1,5 +1,5 @@
 function [brenew, newboundary, newboundaryidx] = convexilization(boundary, step)
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % This function is developed to convexilization boundary
 % if boundary is concave and need to be convexilized
 % this program return a new boundary with brenew = 1
@@ -7,16 +7,22 @@ function [brenew, newboundary, newboundaryidx] = convexilization(boundary, step)
 
 % [brenew, newboundary] = convexilization(boundary, step)
 % INPUTS:
-% boundary: 
+% boundary: boundary clouds, each row of this matrix is a vertex with [x, y] coordinates
 % step: this parameter controls the granularity of boundary cloud sampling
+% OUTPUTS:
+% brenew: whether convexilization is performed
+% newboundary: if brenew == 1, newboundary would be non-zero. It is the sampled convex boundary clouds
+% newboundaryidx: indices the newboundary clouds in original boundary clouds
 
-% brenew : whether convexilization is performed
-% newboundary : if brenew = 1, new boundary is non-zero
-% convexilization(boundary) boundary : the clouds
+% Author: Weiwei Wan, The University of Tokyo
+% Data: 04-21-2011
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% 04-21-2011, weiwei
   lbdry = size(boundary, 1);
   %simplification
+  % NOTE, there are many algorithm for simplification
+  % The following one is from mathworks website
+  % It is based on http://en.wikipedia.org/wiki/Ramer-Douglas-Peucker_algorithm
   [ps,ix] = dpsimplify(boundary, step);
   %decide whether convexilization is necessary
   lix = size(ix, 1);
@@ -26,8 +32,6 @@ function [brenew, newboundary, newboundaryidx] = convexilization(boundary, step)
     iprevious = i-1;
     ipresent = i;
     inext = i+1;
-    %idxprevious = ix(iprevious);
-    %idxpresent = idx(ipresent);
     ptprevious = ps(iprevious, :);
     ptpresent = ps(ipresent, :);
     ptnext = ps(inext, :);
@@ -47,7 +51,6 @@ function [brenew, newboundary, newboundaryidx] = convexilization(boundary, step)
     cvidxs = convhull(ps(:,1), ps(:,2));
     cvpt = ps(cvidxs, :);
     lcvpt = size(cvidxs, 1);
-    % draw edge pixels by hand
     tmpnewboundary = repmat(0, 1000, 2);
     tmpnewboundaryidx = repmat(0, 1000, 2);
     lboundary = 0;
