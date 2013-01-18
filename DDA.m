@@ -12,6 +12,7 @@ function pointlist = DDA(x1,y1,x2,y2)
 %
 % Author: Weiwei Wan, The Unviersity of Tokyo
 % Data: 04-11-2011 (last modified)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
   length =abs(x2-x1);
   if abs(y2-y1)>length
