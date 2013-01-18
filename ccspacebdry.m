@@ -1,4 +1,5 @@
 function [ccpivot, ccbdry] = ccspacebdry(objbdry, indx, targetDepthTagged)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % This function performs CC boundary generation according to
 % a given base boundary and a reference index
 %
@@ -13,6 +14,7 @@ function [ccpivot, ccbdry] = ccspacebdry(objbdry, indx, targetDepthTagged)
 %
 % Author: Weiwei Wan, The University of Tokyo
 % Data: 04-06-2012 (last modified)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
   [numR, numC] = size(targetDepthTagged);
   tmpboundary = zeros(numR, numC);
