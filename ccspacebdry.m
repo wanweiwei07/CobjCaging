@@ -1,3 +1,5 @@
+'''matlab
+
 function [ccpivot, ccbdry] = ccspacebdry(objbdry, indx, targetDepthTagged)
 % This function performs CC boundary generation according to
 % a given base boundary and a reference index
@@ -27,3 +29,4 @@ function [ccpivot, ccbdry] = ccspacebdry(objbdry, indx, targetDepthTagged)
   end
   [etRow, etCol] = find(tmpboundary, 1);
   ccbdry = bwtraceboundary(tmpboundary, [etRow, etCol], 'N', 4);
+''''
